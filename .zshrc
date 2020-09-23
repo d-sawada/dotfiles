@@ -157,7 +157,7 @@ alias rn='react-native'
 alias vn='vue-native'
 
 # Node Versioning
-alias n='nodebrew'
+alias n='nodenv'
 
 # saml2aws
 alias update-saml2aws='saml2aws login -a gsuite -p gsuite --skip-prompt --force'
