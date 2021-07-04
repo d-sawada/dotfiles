@@ -148,7 +148,7 @@ alias via='vim +PluginInstall +qall'
 
 # dcoker
 alias d='docker'
-alias fig='docker-compose'
+alias fig='docker compose'
 
 # ReactNative
 alias rn='react-native'
