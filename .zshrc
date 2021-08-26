@@ -1,6 +1,11 @@
 autoload -Uz add-zsh-hook
 
 ##################################################
+# Plugins
+##################################################
+source ~/.zsh_plugins/zaw/zaw.zsh
+
+##################################################
 # Key binding
 ##################################################
 bindkey -d
@@ -21,6 +26,7 @@ bindkey $terminfo[kLFT] shift-left
 bindkey $terminfo[kRIT] shift-right
 bindkey $terminfo[kri] shift-up
 bindkey $terminfo[kind] shift-down
+bindkey '^h' zaw-history
 
 ##################################################
 # Colors
@@ -167,7 +173,10 @@ alias update-saml2aws='saml2aws login -a gsuite -p gsuite --skip-prompt --force'
 ##################################################
 # Histroy
 setopt share_history
-setopt histignorealldups
+setopt hist_ignore_all_dups
+setopt hist_verify
+setopt hist_reduce_blanks
+setopt hist_expand
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
