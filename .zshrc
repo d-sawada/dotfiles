@@ -1,11 +1,6 @@
 autoload -Uz add-zsh-hook
 
 ##################################################
-# Plugins
-##################################################
-source ~/.zsh_plugins/zaw/zaw.zsh
-
-##################################################
 # Key binding
 ##################################################
 bindkey -d
@@ -29,16 +24,9 @@ bindkey $terminfo[kind] shift-down
 bindkey '^h' zaw-history
 
 ##################################################
-# Colors
-##################################################
-autoload -Uz colors
-colors
-
-##################################################
 # Completion
 ##################################################
-autoload -Uz compinit
-compinit
+autoload -Uz compinit; compinit
 
 # case-insensitive
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
@@ -52,23 +40,6 @@ zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
 
 # completion process name by 'ps'
 zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
-
-##################################################
-# Prompt
-##################################################
-# vsc_info
-autoload -Uz vcs_info
-zstyle ':vcs_info:*' formats '%F{white} - %F{cyan}[%b]%f'
-zstyle ':vcs_info:*' actionformats '%F{white} - %F{cyan}[%b%F{white} | %F{red}%a%F{white}]%f'
-
-# prompt
-function _update_prompt() {
-    LANG=en_US.UTF-8 vcs_info
-    PROMPT="%{${fg[yellow]}%}-------------------------------------------------------------
-%{${reset_color}%}[%m %{${fg[cyan]}%}%n %{${fg[green]}%}%~%{${reset_color}%}]%{${vcs_info_msg_0_}%}
-%{${fg[red]}%}%% %{${reset_color}%}"
-}
-add-zsh-hook precmd _update_prompt
 
 ##################################################
 # Key operation
@@ -100,13 +71,18 @@ alias diffa="/usr/bin/diff --new-line-format='+%L' --old-line-format='-%L' --unc
 # Git
 alias gs='git status'
 alias gd='git diff'
-alias gdhh='git diff HEAD~1 HEAD'
+alias gdn='git diff --name-only'
+alias gdhh='git diff @~1 @'
+alias gdnhh='git diff --name-only @~1 @'
 alias gb='git branch'
+alias gw='git switch'
+alias gwc='git switch -c'
 alias gco='git checkout'
 alias gcob='git checkout -b'
 alias ga='git add'
 alias gau='git add -u'
 alias gaa='git add -A'
+alias gr='git restore --staged'
 alias gcm='git commit -m'
 alias gca='git commit --amend'
 alias gcan='git commit --amend --no-edit'
@@ -115,6 +91,13 @@ alias ggr="git log --graph --pretty=format:'%C(yellow)%cd %C(cyan)%h %C(bold blu
 alias ggra="ggr --all"
 alias gls="git ls-remote"
 alias gbdm="git branch --merged | grep -vE '^\*|master$|develop$' | xargs -I % git branch -d %"
+function gc() {
+  branch=`echo $vcs_info_msg_0_ | sed -E 's/^.*\[%F{cyan}(.+)%F{white}\].*$/\1/'`
+  git commit -m "$branch $@"
+}
+function gri() {
+  git rebase -i @~$1
+}
 function gda() {
   local diff=""
   local h="HEAD"
@@ -140,7 +123,7 @@ function gpp() {
   git fetch $1 pull/$2/head:$_branch_name
 }
 function gfp() {
-  [ -z "$1" -o -z "$1" ] && { echo 'Usage: gfp <remote> <branch>'; return 1 }
+  [ -z "$1" -o -z "$2" ] && { echo 'Usage: gfp <remote> <branch>'; return 1 }
   git fetch $1 $2
   git reset --hard $1/$2
 }
@@ -155,6 +138,7 @@ alias via='vim +PluginInstall +qall'
 # dcoker
 alias d='docker'
 alias fig='docker compose'
+alias docker-prune='docker rm $(docker ps -aq) -f; docker system prune -af; docker volume prune -f'
 
 # ReactNative
 alias rn='react-native'
@@ -164,9 +148,6 @@ alias vn='vue-native'
 
 # Node Versioning
 alias n='nodenv'
-
-# saml2aws
-alias update-saml2aws='saml2aws login -a gsuite -p gsuite --skip-prompt --force'
 
 ##################################################
 # Option
@@ -208,6 +189,12 @@ if which pyenv >/dev/null; then eval "$(pyenv init -)"; fi
 
 # nodenv
 if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
+
+# jenv
+if which jenv > /dev/null; then
+  PATH="$HOME/.jenv/bin:$PATH"
+  eval "$(jenv init -)"
+fi
 
 # mysql
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
