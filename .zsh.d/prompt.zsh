@@ -5,7 +5,7 @@ autoload -Uz add-zsh-hook
 autoload -Uz is-at-least
 autoload -Uz colors; colors
 
-! is-at-least 4.3.11 && { echo 'require zsh >= 4.3.11'; exit 1 }
+! is-at-least 4.3.11 && { echo 'require zsh >= 4.3.11'; exit 1; }
 
 zstyle ':vcs_info:*' enable git # Gitしか勝たん
 zstyle ':vcs_info:git:*' formats '%F{white} - [%F{cyan}%b%F{white}] %m%f'
@@ -77,7 +77,9 @@ function _update_prompt_with_vcs_info() {
   LANG=en_US.UTF-8 vcs_info
 
   if [[ -z ${vcs_info_msg_0_} ]]; then
-    PROMPT=""
+    PROMPT="%{${fg[yellow]}%}-------------------------------------------------------------
+%{${reset_color}%}[%m %{${fg[cyan]}%}%n %{${fg[green]}%}%~%{${reset_color}%}]
+%{${fg[red]}%}%% %{${reset_color}%}"
   else
     PROMPT="%{${fg[yellow]}%}-------------------------------------------------------------
 %{${reset_color}%}[%m %{${fg[cyan]}%}%n %{${fg[green]}%}%~%{${reset_color}%}]%{${vcs_info_msg_0_}%}
