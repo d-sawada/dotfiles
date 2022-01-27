@@ -1,0 +1,220 @@
+{
+  // ====================
+  // Core
+  // ====================
+  "debug.inlineValues": true,                           // デバッグ中にインラインで変数内容を表示する
+  "debug.internalConsoleOptions": "openOnSessionStart", // デバッグ開始時にデバッグコンソールを開く
+  "debug.openDebug": "openOnSessionStart",              // デバッグ開始時にデバッグウィンドウを開く
+  "debug.toolBarLocation": "docked",                    // デバッグツールバーが邪魔なのでデバッグウィンドウに埋め込む
+
+  "editor.bracketPairColorization.enabled": true,              // カッコのペアを色付きで表示する
+  "editor.codeActionsOnSave": {},                              // 保存時のアクションは言語ごとに構成する
+  "editor.colorDecorators": true,                              // 色を表示する
+  "editor.copyWithSyntaxHighlighting": false,                  // エディタ内をコピーする時書式をコピーしない（背景とか持ってっちゃうので）
+  "editor.cursorBlinking": "phase",                            // カーソルを点滅させる
+  "editor.detectIndentation": false,                           // ファイルの内容に基づくインデントの設定を無効にする。常にindentは2
+  "editor.dragAndDrop": false,                                 // 選択範囲をドラッグで移動しないようにする
+  "editor.find.autoFindInSelection": "multiline",              // 選択範囲内を検索対象にする
+  "editor.foldingStrategy": "indentation",                     // インデントに応じた折りたたみをする
+  "editor.fontFamily": "'MyricaM M'",                          // さいつよのフォントMyricaM M
+  "editor.fontSize": 16,                                       // 無難なサイズを選択する
+  "editor.formatOnPaste": false,                               // コピペ時にインデントを維持する
+  "editor.formatOnSave": false,                                // 保存時のアクションは言語ごとに構成する
+  "editor.guides.highlightActiveIndentation": true,            // アクティブなインデントを強調表示
+  "workbench.editor.highlightModifiedTabs": true,              // 変更されたタブをハイライトする
+  "editor.minimap.enabled": false,                             // ミニマップを表示しない
+  "editor.renderControlCharacters": true,                      // 制御文字を表示する
+  "editor.renderLineHighlight": "all",                         // カーソル行を強調する
+  "editor.renderWhitespace": "boundary",                       // 空白文字を表示する
+  "editor.rulers": [80,120],                                   // ルーラーの幅は80文字と120文字を表示
+  "editor.showFoldingControls": "always",                      // 行の折りたたみ記号を常に表示する
+  "editor.tabSize": 2,                                         // タブをスペース2つに置き換える
+  "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?", // セパレータを定義
+  "editor.wordWrap": "off",                                    // 折り返さない
+
+  "explorer.confirmDragAndDrop": false, // ドラッグドロップによるファイルの移動を確認しない（cmd+zで戻せる）
+  "explorer.confirmDelete": false,      // ファイルの削除を確認しない（cmd+zで戻せる）
+
+  // ファイルの対応
+  "files.associations": {
+    "*.vue": "vue",
+    "*.uiflow": "uiflow",
+    "*.*lintrc": "json",
+    "*.jb": "ruby",
+    "*.html.erb": "erb",
+    "*.js.erb": "javascript",
+    "Schemafile": "ruby",
+    "zshrc": "shellscript",
+    "settings.json": "jsonc",
+    ".env*": "dotenv"
+  },
+
+  // ファイルの自動監視対象から除外（動作軽量化が目的）
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    "**/images/**": true,
+    "**/img/**": true,
+    "**/swf/**": true
+  },
+
+  "files.eol": "\n",                    // 改行文字を\nとする
+  "files.insertFinalNewline": true,     // 保存時にファイルの最後に空行を挿入する
+  "files.trimFinalNewlines": true,      // 保存時にファイルの最後に存在する空行を削除する
+  "files.trimTrailingWhitespace": true, // 保存時に行の終端の空白文字を削除する
+
+  "terminal.integrated.fontFamily": "MyricaM M", // ターミナルもやはりさいつよフォントにする
+  "terminal.integrated.fontSize": 16,            // 小さすぎるかもしれないと思っているけどまぁいいや
+  "terminal.integrated.scrollback": 5000,        // ターミナルの保持行数増やす
+
+  "workbench.editor.showTabs": true,          // 開いているエディターをタブで表示する
+  "workbench.editor.tabCloseButton": "left",  // タブ閉じボタンを左に表示すると連続で消しやすい
+  "workbench.editor.wrapTabs": true,          // タブを複数行で表示
+  "workbench.startupEditor": "none",          // 初期表示を消す
+  "workbench.iconTheme": "file-icons",        // アイコンはお好みで
+
+  // ====================
+  // Extention
+  // ====================
+  "git.autofetch": true,                  // 自動でGit fetchする
+  "git.confirmSync": false,               // Reposに集約する
+  "git.enableSmartCommit": true,          // stageがない場合全てcommitする
+  "git.ignoreLegacyWarning": true,        // 古いGit警告を無視する
+
+  "indentRainbow.colors": ["rgba(255,255,64,0.1)", "rgba(127,255,127,0.1)", "rgba(255,127,255,0.1)", "rgba(79,236,236,0.1)"],
+
+  "todo.file.include": ["**/.vscode/TODO"], // .vscodeの中にTODOファイルを作成してそこで管理する
+  "todo.file.exclude": [],                  // 除外対象は空にする（デフォでいくつか入っているので）
+  // "NOTE:"のようにコロンのついたもののみ検知する（そういうルールでつけることで明確にする）
+  // Default:            "(?:<!-- *)?(?:#|// @|//|/\\*+|<!--|--|\\* @|\\{!|\\{\\{!--|\\{\\{!) *(TODO|FIXME|FIX|BUG|UGLY|HACK|NOTE|IDEA|REVIEW|DEBUG|OPTIMIZE)(?:\\s*\\([^)]+\\))?:?(?!\\w)(?: *-->| *\\*/| *!}| *--}}| *}}|(?= *(?:[^:]//|/\\*+|<!--|@|--|\\{!|\\{\\{!--|\\{\\{!))|((?: +[^\\n@]*?)(?= *(?:[^:]//|/\\*+|<!--|@|--(?!>)|\\{!|\\{\\{!--|\\{\\{!))|(?: +[^@\\n]+)?))", // Regex used for finding embedded todos, requires double escaping
+  "todo.embedded.regex": "(?:<!-- *)?(?:#|// @|//|/\\*+|<!--|--|\\* @|\\{!|\\{\\{!--|\\{\\{!) *(TODO|FIXME|FIX|BUG|UGLY|HACK|NOTE|IDEA|REVIEW|DEBUG|OPTIMIZE)(?:\\s*\\([^)]+\\))?:(?!\\w)(?: *-->| *\\*/| *!}| *--}}| *}}|(?= *(?:[^:]//|/\\*+|<!--|@|--|\\{!|\\{\\{!--|\\{\\{!))|((?: +[^\\n@]*?)(?= *(?:[^:]//|/\\*+|<!--|@|--(?!>)|\\{!|\\{\\{!--|\\{\\{!))|(?: +[^@\\n]+)?))", // Regex used for finding embedded todos, requires double escaping
+  "todo.embedded.exclude": [ // 走査対象から除外する
+    "**/.*", "**/.*/**", // dot
+    "**/*.min.*",        // minify
+    "**/node_modules",   // package
+    "**/vendor/bundle",  // gem
+    "**/public",         // public
+    // auto create
+    "**/vendor/cache", "**/dist", "**/build", "**/out", "**/output", "**/_output", "**/tmp", "**/cache",
+    // exclude ext
+    "**/*.png", "**/*.jpg", "**/*.jpeg", "**/*.svg", "**/*.pdf"
+  ],
+
+  "code-runner.executorMap": {
+    "javascript": "node",
+    "python": "python",
+    "ruby": "/Users/d_sawada/.rbenv/shims/ruby",
+    "shellscript": "zsh",
+  },
+
+  // ====================
+  // Default Language
+  // ====================
+  "html.format.enable": false,
+  "javascript.format.enable": false,
+  "javascript.validate.enable": false,
+  "typescript.format.enable": false,
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+
+  // ====================
+  // Language
+  // ====================
+  "ruby.format": false,              // rubocopの自動整形は遅いので無効にする
+  "ruby.intellisense": "rubyLocate", // インテリセンスを有効にする
+  "ruby.lint": {                     // lintの表示の方だけ行う
+    "rubocop": true
+  },
+  "ruby.useLanguageServer": true,    // 定義ジャンプなどを有効にする
+
+  "eslint.alwaysShowStatus": false,  // ステータスバーにESLintを表示しない
+  "eslint.workingDirectories": [     // workspaceで複数Repo扱う際に必要
+    { "mode": "auto" }
+  ],
+
+  "vetur.format.enable": false,      // ESLintでformatする
+
+  "stylelint.validate": ["css", "scss"], // scssがデフォルトでなくなったので追加
+
+  "[ruby]": {
+    "editor.defaultFormatter": "rebornix.ruby",
+    "editor.formatOnSave": true,
+  },
+
+  "[javascript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+      "source.fixAll.stylelint": true
+    },
+  },
+
+  "[vue]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+      "source.fixAll.stylelint": true
+    },
+    "files.trimTrailingWhitespace": false // vueでは末尾の空白削除をしない（pug用）
+  },
+
+  "[scss]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.stylelint": true
+    },
+    "editor.defaultFormatter": "stylelint.vscode-stylelint",
+  },
+
+  "[markdown]": {
+    "editor.formatOnSave": true,
+    "files.trimTrailingWhitespace": false, // markdownでは末尾の空白削除をしない
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+    "editor.foldingStrategy": "auto"
+  },
+
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+
+  "[jsonc]": {
+    "editor.formatOnSave": false // フォーマットしない
+  },
+
+  "[sql]": {
+    "editor.formatOnSave": false // フォーマットしない
+  },
+
+  "[settings.json]": {
+    "editor.formatOnSave": false // フォーマットしない
+  },
+
+  "[keybindings.json]": {
+    "editor.formatOnSave": false // フォーマットしない
+  },
+
+  // ====================
+  // Multi Command
+  // ====================
+  "multiCommand.commands": [
+    {
+      "command": "multiCommand.switchWindow",
+      "sequence": [
+        "workbench.action.focusFirstEditorGroup",
+        "workbench.action.quickSwitchWindow"
+      ]
+    }
+  ],
+
+  // ====================
+  // Setting Sync
+  // ====================
+  "settingsSync.ignoredSettings": [
+    "workbench.settings.openDefaultKeybindings",
+    "settingsSync.keybindingsPerPlatform"
+  ],
+  "security.workspace.trust.untrustedFiles": "open",
+  "window.zoomLevel": -1,
+}
