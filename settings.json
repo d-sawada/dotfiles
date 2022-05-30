@@ -2,7 +2,7 @@
   // ====================
   // Core
   // ====================
-  "debug.inlineValues": true,                           // デバッグ中にインラインで変数内容を表示する
+  "debug.inlineValues": "auto",                         // デバッグ中にインラインで変数内容を表示する
   "debug.internalConsoleOptions": "openOnSessionStart", // デバッグ開始時にデバッグコンソールを開く
   "debug.openDebug": "openOnSessionStart",              // デバッグ開始時にデバッグウィンドウを開く
   "debug.toolBarLocation": "docked",                    // デバッグツールバーが邪魔なのでデバッグウィンドウに埋め込む
@@ -26,7 +26,7 @@
   "editor.renderControlCharacters": true,                      // 制御文字を表示する
   "editor.renderLineHighlight": "all",                         // カーソル行を強調する
   "editor.renderWhitespace": "boundary",                       // 空白文字を表示する
-  "editor.rulers": [80,120],                                   // ルーラーの幅は80文字と120文字を表示
+  "editor.rulers": [80, 100, 120],                             // ルーラー
   "editor.showFoldingControls": "always",                      // 行の折りたたみ記号を常に表示する
   "editor.tabSize": 2,                                         // タブをスペース2つに置き換える
   "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?", // セパレータを定義
@@ -138,6 +138,11 @@
 
   "stylelint.validate": ["css", "scss"], // scssがデフォルトでなくなったので追加
 
+  "[rust]": {
+    "editor.formatOnSave": true,
+    "rust-client.updateOnStartup": true
+  },
+
   "[ruby]": {
     "editor.defaultFormatter": "rebornix.ruby",
     "editor.formatOnSave": true,
@@ -215,6 +220,4 @@
     "workbench.settings.openDefaultKeybindings",
     "settingsSync.keybindingsPerPlatform"
   ],
-  "security.workspace.trust.untrustedFiles": "open",
-  "window.zoomLevel": -1,
 }
