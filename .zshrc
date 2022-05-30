@@ -87,13 +87,14 @@ alias gcm='git commit -m'
 alias gca='git commit --amend'
 alias gcan='git commit --amend --no-edit'
 alias gcam='git commit --amend -m'
+alias gce='gc --allow-empty'
 alias ggr="git log --graph --pretty=format:'%C(yellow)%cd %C(cyan)%h %C(bold blue)%an %Creset%s %C(red)%d' --abbrev-commit --date=short"
 alias ggra="ggr --all"
 alias gls="git ls-remote"
 alias gbdm="git branch --merged | grep -vE '^\*|master$|develop$' | xargs -I % git branch -d %"
 function gc() {
   branch=`echo $vcs_info_msg_0_ | sed -E 's/^.*\[%F{cyan}(.+)%F{white}\].*$/\1/'`
-  git commit -m "$branch $@"
+  git commit --allow-empty -m "$branch $@"
 }
 function gri() {
   git rebase -i @~$1
@@ -148,6 +149,9 @@ alias vn='vue-native'
 
 # Node Versioning
 alias n='nodenv'
+
+# Clock
+alias cloc-front='cloc --exclude-dir=node_modules '
 
 ##################################################
 # Option
