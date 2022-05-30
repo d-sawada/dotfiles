@@ -1,0 +1,20 @@
+{
+  "recommendations": [
+    "formulahendry.auto-close-tag", // 閉じタグの補完
+    "formulahendry.auto-rename-tag", // 反対側のHTMLタグもrenameしてくれる
+    "wmaurer.change-case", // snake_case, camelCase, PascalCaseなど色々変換
+    "editorconfig.editorconfig", // editorconfigは必須
+    "dbaeumer.vscode-eslint", // ESLint
+    "eamodio.gitlens", // 多機能。ファイルや行ごとに簡単に最終更新履歴がわかるのがオススメ単純なFileHistoryは組み込みのGitでも問題ない
+    "oderwat.indent-rainbow", // インデントをわかりやすく。好みが分かれそう
+    "techer.open-in-browser", // ブラウザで開く。生HTMLを開くときに
+    "christian-kohler.path-intellisense", // 文字を打つときパスの補完をしてくれる
+    "esbenp.prettier-vscode", // Prettier
+    "artdiniz.quitcontrol-vscode", // ⌘QとかでVSCodeを閉じなくする。結構間違えて押しちゃうので
+    "bung87.rails", // Rails
+    "mechatroner.rainbow-csv", // みやすい。別の拡張だとCSVエディタっぽいのを起動するものもある
+    "rebornix.ruby", // Ruby
+    "syler.sass-indented", // Sass
+    "stylelint.vscode-stylelint" // Stylelint
+  ]
+}
