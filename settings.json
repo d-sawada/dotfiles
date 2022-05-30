@@ -46,6 +46,8 @@
     "Schemafile": "ruby",
     "zshrc": "shellscript",
     "settings.json": "jsonc",
+    "keybindings.json": "jsonc",
+    "extensions.json": "jsonc",
     ".env*": "dotenv"
   },
 
