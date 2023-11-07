@@ -1,20 +1,97 @@
 {
+  // "recommendations": [
+  //   "artdiniz.quitcontrol-vscode", // ⌘QとかでVSCodeを閉じなくする。結構間違えて押しちゃうので
+  //   "bung87.rails", // Rails
+  //   "christian-kohler.path-intellisense", // 文字を打つときパスの補完をしてくれる
+  //   "dbaeumer.vscode-eslint", // ESLint
+  //   "eamodio.gitlens", // 多機能。ファイルや行ごとに簡単に最終更新履歴がわかるのがオススメ単純なFileHistoryは組み込みのGitでも問題ない
+  //   "editorconfig.editorconfig", // editorconfigは必須
+  //   "esbenp.prettier-vscode", // Prettier
+  //   "formulahendry.auto-close-tag", // 閉じタグの補完
+  //   "formulahendry.auto-rename-tag", // 反対側のHTMLタグもrenameしてくれる
+  //   "mechatroner.rainbow-csv", // みやすい。別の拡張だとCSVエディタっぽいのを起動するものもある
+  //   "oderwat.indent-rainbow", // インデントをわかりやすく。好みが分かれそう
+  //   "rebornix.ruby", // Ruby
+  //   "stylelint.vscode-stylelint" // Stylelint
+  //   "syler.sass-indented", // Sass
+  //   "techer.open-in-browser", // ブラウザで開く。生HTMLを開くときに
+  //   "wmaurer.change-case", // snake_case, camelCase, PascalCaseなど色々変換
+  // ],
   "recommendations": [
-    "formulahendry.auto-close-tag", // 閉じタグの補完
-    "formulahendry.auto-rename-tag", // 反対側のHTMLタグもrenameしてくれる
-    "wmaurer.change-case", // snake_case, camelCase, PascalCaseなど色々変換
-    "editorconfig.editorconfig", // editorconfigは必須
-    "dbaeumer.vscode-eslint", // ESLint
-    "eamodio.gitlens", // 多機能。ファイルや行ごとに簡単に最終更新履歴がわかるのがオススメ単純なFileHistoryは組み込みのGitでも問題ない
-    "oderwat.indent-rainbow", // インデントをわかりやすく。好みが分かれそう
-    "techer.open-in-browser", // ブラウザで開く。生HTMLを開くときに
-    "christian-kohler.path-intellisense", // 文字を打つときパスの補完をしてくれる
-    "esbenp.prettier-vscode", // Prettier
-    "artdiniz.quitcontrol-vscode", // ⌘QとかでVSCodeを閉じなくする。結構間違えて押しちゃうので
-    "bung87.rails", // Rails
-    "mechatroner.rainbow-csv", // みやすい。別の拡張だとCSVエディタっぽいのを起動するものもある
-    "rebornix.ruby", // Ruby
-    "syler.sass-indented", // Sass
-    "stylelint.vscode-stylelint" // Stylelint
+    // Editor in VSCode
+    "Arjun.swagger-viewer",         // Swagger
+    "jebbs.plantuml",               // PlantUML
+    "bierner.markdown-mermaid",     // Mermaid
+    "janisdd.vscode-edit-csv",      // CSV
+    "codespaces-contrib.codeswing", // CodeSwing
+
+    // Improve UI
+    "file-icons.file-icons",              // イカしたアイコンにする
+    "gurumukhi.selected-lines-count",     // 選択している行数を確認する
+
+    // Doc
+    "eamodio.gitlens",
+    "ms-azuretools.vscode-docker",
+    "ms-vscode-remote.remote-containers",
+    "ms-vscode-remote.remote-ssh-edit",
+    "ms-vscode-remote.remote-ssh",
+    "ms-vscode-remote.remote-wsl",
+    "ms-vscode-remote.vscode-remote-extensionpack",
+    "ms-vscode.remote-explorer",
+    "ms-vscode.remote-server",
+    "vsls-contrib.gistfs",
+
+    // Utilities
+    "artdiniz.quitcontrol-vscode",        // ⌘QとかでVSCodeを閉じなくする。結構間違えて押す
+    "bibhasdn.unique-lines",              // ユニークライン
+    "christian-kohler.path-intellisense", // パス補完
+    "bung87.vscode-gemfile",              // Gemのサイトへのリンクを表示する
+    "dariofuzinato.vue-peek",             // Componentタグから直接ファイルに飛ぶ
+    "formulahendry.auto-close-tag",       // 閉じタグを自動で置いてくれる
+    "formulahendry.auto-rename-tag",      // 対となっているタグも一緒にrenameしてくれる
+    "formulahendry.code-runner",          // エディタ内のコードを実行する
+    "MS-CEINTL.vscode-language-pack-ja",  // 日本語化
+    "sandcastle.vscode-open",             // コンテキストメニューから開く
+    "wmaurer.change-case",                // ケース置換
+    "wraith13.sysinfo-vscode",            // システム情報取得
+
+    // Linter/Formatter/LanguageSupport
+    "EditorConfig.EditorConfig",           // .editorconfig
+    "bmalehorn.shell-syntax",              // .sh
+    "dbaeumer.vscode-eslint",              // ESLint
+    "esbenp.prettier-vscode",              // Prettier
+    "Shopify.ruby-extensions-pack",        // Ruby
+    "Shopify.ruby-lsp",                    // Ruby
+    "sorbet.sorbet-vscode-extension",      // Ruby
+    "Hridoy.rails-snippets",               // Rails
+    "xabikos.JavaScriptSnippets",          // JavaScript
+    "steoates.autoimport",                 // JavaScript - Auto Import
+    "ms-vscode.vscode-typescript-next",    // Typescript
+    "mike-co.import-sorter",               // Typescript - Import Sorter
+    "mikestead.dotenv",                    // DotEnv
+    "MisterJ.vue-volar-extention-pack",    // Vue
+    "Vue.volar",                           // Vue
+    "Vue.vscode-typescript-vue-plugin",    // Vue + Typescript
+    "redhat.vscode-yaml",                  // Yaml
+    "PascalReitermann93.vscode-yaml-sort", // Yaml - Sorter
+    "rust-lang.rust-analyzer",             // Rust
+    "sibiraj-s.vscode-scss-formatter",     // Scss
+    "stylelint.vscode-stylelint",          // Style
+    "yzhang.markdown-all-in-one",          // Markdown
+
+    // Colorize
+    "emilast.LogFileHighlighter", // .log
+    "IBM.output-colorizer",       // OUTPUT
+    "iliazeus.vscode-ansi",       // ANSI
+    "mechatroner.rainbow-csv",    // CSV
+    "naumovs.color-highlight",    // Color Code
+    "oderwat.indent-rainbow",     // Indent
+
+    // Debugger
+    "KoichiSasada.vscode-rdbg",          // Ruby
+    "ms-vscode.js-debug-companion",      // JavaScript
+    "ms-vscode.js-debug",                // JavaScript
+    "ms-vscode.vscode-js-profile-table", // JavaScript
+    "vadimcn.vscode-lldb"
   ]
 }

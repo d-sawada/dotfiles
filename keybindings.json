@@ -1,24 +1,32 @@
 [
-  // Disable Default Setting
+  // Disable
   { "key": "cmd+k cmd+s", "command": "-workbench.action.openGlobalKeybindings" },
-  { "key": "ctrl+1", "command": "-workbench.action.openEditorAtIndex1" },
+  { "key": "ctrl+1",      "command": "-workbench.action.openEditorAtIndex1" },
 
   // Global
   { "key": "shift+alt+[",         "command": "workbench.action.openGlobalKeybindingsFile" }, // keybindings.jsonを開く
   { "key": "shift+alt+[IntlYen]", "command": "workbench.action.openSettingsJson" },          // settings.jsonを開く
   { "key": "shift+alt+[Equal]",   "command": "workbench.action.openWorkspaceConfigFile" },   // workspace設定を開く
+  { "key": "ctrl+tab",            "command": "workbench.action.nextEditorInGroup" },         // エディタをShift+Tabで移動する
+  { "key": "ctrl+shift+tab",      "command": "workbench.action.previousEditorInGroup" },     // エディタをShift+Tabで移動する
+  { "key": "shift+alt+c",         "command": "extension.changeCase.camel" },                 // camelCaseに変換
+  { "key": "shift+alt+p",         "command": "extension.changeCase.pascal" },                // PascalCaseに変換
+  { "key": "shift+alt+s",         "command": "extension.changeCase.snake" },                 // snake_caseに変換
+  { "key": "shift+alt+k",         "command": "extension.changeCase.kebab" },                 // kebab-caseに変換
+  { "key": "shift+alt+l",         "command": "extension.changeCase.lower" },                 // lower caseに変換
+  { "key": "shift+alt+u",         "command": "extension.changeCase.upper" },                 // UPPER CASEに変換
 
   // Editor
   { "when": "editorTextFocus", "key": "ctrl+;",       "command": "workbench.action.terminal.focus" }, // ターミナルに移動
   { "when": "editorTextFocus", "key": "ctrl+p",       "command": "workbench.action.pinEditor" },      // ファイルをピン留め
   { "when": "editorTextFocus", "key": "ctrl+shift+p", "command": "workbench.action.unpinEditor" },    // ファイルをピン留め解除
-  { "when": "editorTextFocus", "key": "ctrl+f",       "command": "editor.toggleFold" },
+  { "when": "editorTextFocus", "key": "ctrl+f",       "command": "editor.toggleFold" },               // 折りたたみ・解除
 
   // Terminal
-  { "when": "terminalFocus", "key": "ctrl+;",         "command": "workbench.action.focusFirstEditorGroup" },         // エディターに移動
-  { "when": "terminalFocus", "key": "cmd+t",          "command": "workbench.action.terminal.newInActiveWorkspace" }, // タブ作成
-  { "when": "terminalFocus", "key": "cmd+w",          "command": "workbench.action.terminal.kill" },                 // タブ削除
-  { "when": "terminalFocus", "key": "ctrl+tab",       "command": "workbench.action.terminal.focusNext" },            // 次のタブへ
-  { "when": "terminalFocus", "key": "ctrl+shift+tab", "command": "workbench.action.terminal.focusPrevious" },        // 前のタブへ
-  { "when": "terminalFocus", "key": "cmd+up",         "command": "workbench.action.toggleMaximizedPanel" }           // タブ最大化・解除
+  { "when": "terminalFocus", "key": "ctrl+;", "command": "workbench.action.focusFirstEditorGroup" },         // エディタに移動
+  { "when": "terminalFocus", "key": "cmd+t",  "command": "workbench.action.terminal.newInActiveWorkspace" }, // タブ作成
+  { "when": "terminalFocus", "key": "cmd+w",  "command": "workbench.action.terminal.kill" },                 // タブ削除
+  { "when": "terminalFocus", "key": "cmd+up", "command": "workbench.action.toggleMaximizedPanel" },          // ターミナル最大化・解除
+  { "when": "terminalFocus && !terminalEditorFocus", "key": "ctrl+tab",       "command": "workbench.action.terminal.focusNext" },     // 次のタブへ
+  { "when": "terminalFocus && !terminalEditorFocus", "key": "ctrl+shift+tab", "command": "workbench.action.terminal.focusPrevious" }, // 前のタブへ
 ]

@@ -12,21 +12,20 @@
   "editor.colorDecorators": true,                              // 色を表示する
   "editor.copyWithSyntaxHighlighting": false,                  // エディタ内をコピーする時書式をコピーしない（背景とか持ってっちゃうので）
   "editor.cursorBlinking": "phase",                            // カーソルを点滅させる
-  "editor.detectIndentation": false,                           // ファイルの内容に基づくインデントの設定を無効にする。常にindentは2
+  "editor.detectIndentation": false,                           // ファイル内容に基づくインデント設定を無効にする。拡張機能 `EditorConfig.EditorConfig` を使う
   "editor.dragAndDrop": false,                                 // 選択範囲をドラッグで移動しないようにする
   "editor.find.autoFindInSelection": "multiline",              // 選択範囲内を検索対象にする
   "editor.foldingStrategy": "indentation",                     // インデントに応じた折りたたみをする
   "editor.fontFamily": "'MyricaM M'",                          // さいつよのフォントMyricaM M
-  "editor.fontSize": 16,                                       // 無難なサイズを選択する
-  "editor.formatOnPaste": false,                               // コピペ時にインデントを維持する
+  "editor.fontSize": 16,                                       // お好み
+  "editor.formatOnPaste": true,                                // コピペ時にフォーマッタを走らせる
   "editor.formatOnSave": false,                                // 保存時のアクションは言語ごとに構成する
   "editor.guides.highlightActiveIndentation": true,            // アクティブなインデントを強調表示
-  "workbench.editor.highlightModifiedTabs": true,              // 変更されたタブをハイライトする
   "editor.minimap.enabled": false,                             // ミニマップを表示しない
   "editor.renderControlCharacters": true,                      // 制御文字を表示する
   "editor.renderLineHighlight": "all",                         // カーソル行を強調する
   "editor.renderWhitespace": "boundary",                       // 空白文字を表示する
-  "editor.rulers": [80, 100, 120],                             // ルーラー
+  "editor.rulers": [80, 100, 120],                             // お好み
   "editor.showFoldingControls": "always",                      // 行の折りたたみ記号を常に表示する
   "editor.tabSize": 2,                                         // タブをスペース2つに置き換える
   "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?", // セパレータを定義
@@ -51,64 +50,61 @@
     ".env*": "dotenv"
   },
 
-  // ファイルの自動監視対象から除外（動作軽量化が目的）
-  "files.watcherExclude": {
-    "**/.git/objects/**": true,
-    "**/.git/subtree-cache/**": true,
-    "**/node_modules/**": true,
-    "**/images/**": true,
-    "**/img/**": true,
-    "**/swf/**": true
-  },
-
   "files.eol": "\n",                    // 改行文字を\nとする
   "files.insertFinalNewline": true,     // 保存時にファイルの最後に空行を挿入する
-  "files.trimFinalNewlines": true,      // 保存時にファイルの最後に存在する空行を削除する
+  "files.trimFinalNewlines": true,      // 保存時にファイルの最後に存在する重複した空行を削除する
   "files.trimTrailingWhitespace": true, // 保存時に行の終端の空白文字を削除する
 
-  "terminal.integrated.fontFamily": "MyricaM M", // ターミナルもやはりさいつよフォントにする
-  "terminal.integrated.fontSize": 16,            // 小さすぎるかもしれないと思っているけどまぁいいや
-  "terminal.integrated.scrollback": 5000,        // ターミナルの保持行数増やす
+  "security.workspace.trust.untrustedFiles": "open",
 
-  "workbench.editor.showTabs": true,          // 開いているエディターをタブで表示する
-  "workbench.editor.tabCloseButton": "left",  // タブ閉じボタンを左に表示すると連続で消しやすい
-  "workbench.editor.wrapTabs": true,          // タブを複数行で表示
-  "workbench.startupEditor": "none",          // 初期表示を消す
-  "workbench.iconTheme": "file-icons",        // アイコンはお好みで
+  "terminal.integrated.fontFamily": "MyricaM M",            // ターミナルもやはりさいつよフォントにする
+  "terminal.integrated.fontSize": 16,                       // お好み
+  "terminal.integrated.scrollback": 100000,                 // ターミナルの保持行数増やす
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+
+  "window.zoomLevel": -2,
+
+  "workbench.activityBar.location": "top",
+  "workbench.colorCustomizations": {
+    "tab.activeModifiedBorder": "#ff0000",
+    "tab.activeBackground": "#fff2",
+    "tab.activeForeground": "#ff9900",
+    "tab.hoverBackground": "#fff3",
+    "tab.hoverForeground": "#ffcc81",
+    "editorIndentGuide.activeBackground1": "#00ff00"
+  },
+  "workbench.editor.highlightModifiedTabs": true, // 変更されたタブをハイライトする
+  "workbench.editor.showTabs": "multiple",        // タブは必要
+  "workbench.editor.splitInGroupLayout": "vertical",
+  "workbench.editor.tabCloseButton": "off",       // タブ閉じボタンを非表示にしてスペース確保。Cmd+wで削除する
+  "workbench.editor.wrapTabs": true,              // タブを複数行で表示
+  "workbench.iconTheme": "file-icons",            // お好み
+  "workbench.startupEditor": "none",              // 起動時にエディタを空にする
 
   // ====================
   // Extention
   // ====================
-  "git.autofetch": true,                  // 自動でGit fetchする
-  "git.confirmSync": false,               // Reposに集約する
-  "git.enableSmartCommit": true,          // stageがない場合全てcommitする
-  "git.ignoreLegacyWarning": true,        // 古いGit警告を無視する
+  "git.autofetch": true,           // 自動でGit fetchする
+  "git.confirmSync": false,        // Reposに集約する
+  "git.enableSmartCommit": true,   // stageがない場合全てcommitする
+  "git.ignoreLegacyWarning": true, // 古いGit警告を無視する
 
-  "indentRainbow.colors": ["rgba(255,255,64,0.1)", "rgba(127,255,127,0.1)", "rgba(255,127,255,0.1)", "rgba(79,236,236,0.1)"],
-
-  "todo.file.include": ["**/.vscode/TODO"], // .vscodeの中にTODOファイルを作成してそこで管理する
-  "todo.file.exclude": [],                  // 除外対象は空にする（デフォでいくつか入っているので）
-  // "NOTE:"のようにコロンのついたもののみ検知する（そういうルールでつけることで明確にする）
-  // Default:            "(?:<!-- *)?(?:#|// @|//|/\\*+|<!--|--|\\* @|\\{!|\\{\\{!--|\\{\\{!) *(TODO|FIXME|FIX|BUG|UGLY|HACK|NOTE|IDEA|REVIEW|DEBUG|OPTIMIZE)(?:\\s*\\([^)]+\\))?:?(?!\\w)(?: *-->| *\\*/| *!}| *--}}| *}}|(?= *(?:[^:]//|/\\*+|<!--|@|--|\\{!|\\{\\{!--|\\{\\{!))|((?: +[^\\n@]*?)(?= *(?:[^:]//|/\\*+|<!--|@|--(?!>)|\\{!|\\{\\{!--|\\{\\{!))|(?: +[^@\\n]+)?))", // Regex used for finding embedded todos, requires double escaping
-  "todo.embedded.regex": "(?:<!-- *)?(?:#|// @|//|/\\*+|<!--|--|\\* @|\\{!|\\{\\{!--|\\{\\{!) *(TODO|FIXME|FIX|BUG|UGLY|HACK|NOTE|IDEA|REVIEW|DEBUG|OPTIMIZE)(?:\\s*\\([^)]+\\))?:(?!\\w)(?: *-->| *\\*/| *!}| *--}}| *}}|(?= *(?:[^:]//|/\\*+|<!--|@|--|\\{!|\\{\\{!--|\\{\\{!))|((?: +[^\\n@]*?)(?= *(?:[^:]//|/\\*+|<!--|@|--(?!>)|\\{!|\\{\\{!--|\\{\\{!))|(?: +[^@\\n]+)?))", // Regex used for finding embedded todos, requires double escaping
-  "todo.embedded.exclude": [ // 走査対象から除外する
-    "**/.*", "**/.*/**", // dot
-    "**/*.min.*",        // minify
-    "**/node_modules",   // package
-    "**/vendor/bundle",  // gem
-    "**/public",         // public
-    // auto create
-    "**/vendor/cache", "**/dist", "**/build", "**/out", "**/output", "**/_output", "**/tmp", "**/cache",
-    // exclude ext
-    "**/*.png", "**/*.jpg", "**/*.jpeg", "**/*.svg", "**/*.pdf"
-  ],
+  "indentRainbow.colors": ["rgba(255,127,255,0.2)", "rgba(255,255,255,0.2)"],
 
   "code-runner.executorMap": {
     "javascript": "node",
     "python": "python",
-    "ruby": "/Users/d_sawada/.rbenv/shims/ruby",
+    "ruby": "ruby",
     "shellscript": "zsh",
   },
+
+  "redhat.telemetry.enabled": false,
+  "lldb.suppressUpdateNotifications": true,
+  "githubPullRequests.pullBranch": "never",
+  "git.openRepositoryInParentFolders": "never",
 
   // ====================
   // Default Language
@@ -124,30 +120,28 @@
   // ====================
   // Language
   // ====================
-  "ruby.format": false,              // rubocopの自動整形は遅いので無効にする
-  "ruby.intellisense": "rubyLocate", // インテリセンスを有効にする
-  "ruby.lint": {                     // lintの表示の方だけ行う
-    "rubocop": true
-  },
-  "ruby.useLanguageServer": true,    // 定義ジャンプなどを有効にする
-
-  "eslint.alwaysShowStatus": false,  // ステータスバーにESLintを表示しない
-  "eslint.workingDirectories": [     // workspaceで複数Repo扱う際に必要
+  "rubyLsp.formatter": "rubocop",
+  "eslint.workingDirectories": [ // workspaceで複数Repo扱う際に必要
     { "mode": "auto" }
   ],
-
-  "vetur.format.enable": false,      // ESLintでformatする
-
+  "eslint.validate": ["javascript", "typescript", "vue"],
   "stylelint.validate": ["css", "scss"], // scssがデフォルトでなくなったので追加
 
   "[rust]": {
+    "editor.formatOnSave": true
+  },
+
+  "[python]": {
     "editor.formatOnSave": true,
-    "rust-client.updateOnStartup": true
+    "editor.formatOnType": true
   },
 
   "[ruby]": {
-    "editor.defaultFormatter": "rebornix.ruby",
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": true
+  },
+
+  "[erb]": {
+    "editor.formatOnSave": true
   },
 
   "[javascript]": {
@@ -159,8 +153,18 @@
     },
   },
 
+  "[typescript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+      "source.fixAll.stylelint": true
+    },
+  },
+
   "[vue]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": true,
       "source.fixAll.stylelint": true
@@ -169,16 +173,16 @@
   },
 
   "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.codeActionsOnSave": {
       "source.fixAll.stylelint": true
     },
-    "editor.defaultFormatter": "stylelint.vscode-stylelint",
   },
 
   "[markdown]": {
     "editor.formatOnSave": true,
     "files.trimTrailingWhitespace": false, // markdownでは末尾の空白削除をしない
-    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+    "editor.defaultFormatter":"vscode.markdown-language-features",
     "editor.foldingStrategy": "auto"
   },
 
@@ -187,33 +191,20 @@
   },
 
   "[jsonc]": {
-    "editor.formatOnSave": false // フォーマットしない
+    "editor.formatOnSave": false
   },
 
   "[sql]": {
-    "editor.formatOnSave": false // フォーマットしない
+    "editor.formatOnSave": false
   },
 
   "[settings.json]": {
-    "editor.formatOnSave": false // フォーマットしない
+    "editor.formatOnSave": false
   },
 
   "[keybindings.json]": {
-    "editor.formatOnSave": false // フォーマットしない
+    "editor.formatOnSave": false
   },
-
-  // ====================
-  // Multi Command
-  // ====================
-  "multiCommand.commands": [
-    {
-      "command": "multiCommand.switchWindow",
-      "sequence": [
-        "workbench.action.focusFirstEditorGroup",
-        "workbench.action.quickSwitchWindow"
-      ]
-    }
-  ],
 
   // ====================
   // Setting Sync
