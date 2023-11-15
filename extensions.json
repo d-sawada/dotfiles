@@ -1,22 +1,4 @@
 {
-  // "recommendations": [
-  //   "artdiniz.quitcontrol-vscode", // ⌘QとかでVSCodeを閉じなくする。結構間違えて押しちゃうので
-  //   "bung87.rails", // Rails
-  //   "christian-kohler.path-intellisense", // 文字を打つときパスの補完をしてくれる
-  //   "dbaeumer.vscode-eslint", // ESLint
-  //   "eamodio.gitlens", // 多機能。ファイルや行ごとに簡単に最終更新履歴がわかるのがオススメ単純なFileHistoryは組み込みのGitでも問題ない
-  //   "editorconfig.editorconfig", // editorconfigは必須
-  //   "esbenp.prettier-vscode", // Prettier
-  //   "formulahendry.auto-close-tag", // 閉じタグの補完
-  //   "formulahendry.auto-rename-tag", // 反対側のHTMLタグもrenameしてくれる
-  //   "mechatroner.rainbow-csv", // みやすい。別の拡張だとCSVエディタっぽいのを起動するものもある
-  //   "oderwat.indent-rainbow", // インデントをわかりやすく。好みが分かれそう
-  //   "rebornix.ruby", // Ruby
-  //   "stylelint.vscode-stylelint" // Stylelint
-  //   "syler.sass-indented", // Sass
-  //   "techer.open-in-browser", // ブラウザで開く。生HTMLを開くときに
-  //   "wmaurer.change-case", // snake_case, camelCase, PascalCaseなど色々変換
-  // ],
   "recommendations": [
     // Editor in VSCode
     "Arjun.swagger-viewer",         // Swagger
@@ -55,9 +37,9 @@
     "wmaurer.change-case",                // ケース置換
     "wraith13.sysinfo-vscode",            // システム情報取得
 
-    // Linter/Formatter/LanguageSupport
-    "EditorConfig.EditorConfig",           // .editorconfig
-    "bmalehorn.shell-syntax",              // .sh
+    // Linter / Formatter / Language Support
+    "EditorConfig.EditorConfig",           // EditorConfig
+    "bmalehorn.shell-syntax",              // ShellScript
     "dbaeumer.vscode-eslint",              // ESLint
     "esbenp.prettier-vscode",              // Prettier
     "Shopify.ruby-extensions-pack",        // Ruby

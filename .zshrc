@@ -130,6 +130,8 @@ setopt nobeep
 export LESS='-R'
 export LESSCHARSET=utf-8
 
+export PATH="/usr/local/bin:$PATH"
+
 export EDITOR="code"
 if which direnv > /dev/null; then eval "$(direnv hook zsh)"; fi
 
