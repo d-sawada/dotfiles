@@ -100,10 +100,6 @@ alias d='docker'
 alias fig='docker compose'
 alias docker-prune='docker rm $(docker ps -aq) -f; docker system prune -af; docker volume prune -f'
 
-alias n='nodenv'
-alias rn='react-native'
-alias vn='vue-native'
-
 ##################################################
 # Option
 ##################################################
@@ -129,24 +125,7 @@ setopt nobeep
 ##################################################
 export LESS='-R'
 export LESSCHARSET=utf-8
-
-export PATH="/usr/local/bin:$PATH"
-
 export EDITOR="code"
-if which direnv > /dev/null; then eval "$(direnv hook zsh)"; fi
-
-export PATH="$HOME/.rbenv/bin:$PATH"
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-export PYENV_ROOT="/usr/local/var/pyenv"
-if which pyenv >/dev/null; then eval "$(pyenv init -)"; fi
-
-if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
-
-if which jenv > /dev/null; then
-  PATH="$HOME/.jenv/bin:$PATH"
-  eval "$(jenv init -)"
-fi
 
 ##################################################
 # Local Settings
